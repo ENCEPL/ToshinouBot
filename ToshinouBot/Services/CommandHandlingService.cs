@@ -36,7 +36,7 @@ namespace ToshinouBot.Services
             if (message.Source != MessageSource.User) return;
             Console.WriteLine(rawMessage);
             int argPos = 0;
-            if (!message.HasMentionPrefix(!, ref argPos)) return;
+            if (!message.HascharPrefix('!', ref argPos)) return;
 
             var context = new SocketCommandContext(_discord, message);
             var result = await _commands.ExecuteAsync(context, argPos, _provider);
